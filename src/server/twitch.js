@@ -50,6 +50,7 @@ function getPopularChannelList(resp, limit) {
 		});
 }
 function getHlsStream(channel, resp) {
+	debugger;
 	console.log("Received - " + channel);
 	response = resp;
 	access_token.channel = channel;
@@ -72,6 +73,7 @@ function getHlsStream(channel, resp) {
 		});
 }
 function getAccessParams(channel) {
+	debugger;
 	agent
 		.get(access_token.getAccessTokenUrl())
 		.set("user-agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36")
@@ -90,6 +92,7 @@ function getAccessParams(channel) {
 		});
 }
 function getStreamList(params, channel) {
+	debugger;
 	hls_url.setHlsUrl(params, channel);
 	console.log(hls_url.getHlsUrl());
 	agent
@@ -112,6 +115,7 @@ function getStreamList(params, channel) {
 		});
 }
 function parseHlsFile(hlsFileStr) {
+	debugger;
 	var pattern = /#EXT-X-MEDIA.+NAME=\"(.+)\".+\n#EXT-X-STREAM-INF.+\n(.+)/g;
 	var resArr = null;
 	while((resArr = pattern.exec(hlsFileStr)) != null) {
